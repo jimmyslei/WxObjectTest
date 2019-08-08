@@ -1,0 +1,13 @@
+<view class='photo'>
+  <view class='block' wx:for="{{grids}}" wx:item="*this">
+    <view>
+      <text class='text'>{{item.name}}</text>
+    </view>
+    <block>
+      <image src='cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/{{item.icon}}' data-src='cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/{{item.icon}}' bindtap='clickShow' ></image>
+    </block>
+  </view>
+  <view>
+    <official-account></official-account>
+  </view>
+</view>

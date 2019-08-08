@@ -1,0 +1,56 @@
+.head{
+  height: 3rem;
+  width: 100%;
+  background-color: #1AAD19;
+  color: white;
+  position: fixed;
+}
+.body{
+  width: 80%;
+  margin:0 auto;
+  padding-top:3rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px 2px #666;
+}
+video{
+  z-index: -999;
+  width: 90%;
+}
+image{
+  width: 90%;
+  border: 1px solid #ddd;
+}
+.banner{
+  text-align: center;
+  height: 2rem;
+  width: 90%;
+  border: 1px solid #ddd;
+  margin:0 auto;
+  padding: 5rpx;
+  margin-bottom: 10rpx;
+}
+.top{
+  text-align: center;
+  
+  width: 90%;
+  border: 1px solid #ddd;
+  margin:0 auto;
+  padding: 5rpx;
+  margin-bottom: 10rpx;
+}
+
+.main{
+  text-align: center;
+  height: 35rem;
+  width: 90%;
+  border: 1px solid #ddd;
+  margin:0 auto;
+  padding: 5rpx;
+  margin-bottom: 10rpx;
+}
+.footer{
+  height: 5rem;
+  width: 100%;
+  background-color: #1AAD19;
+  color: white
+}

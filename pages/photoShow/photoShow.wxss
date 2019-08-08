@@ -1,0 +1,9 @@
+.photo{
+  text-align: center;
+  color: #bbbbbb
+}
+
+image{
+  margin: 1rem;
+}
+

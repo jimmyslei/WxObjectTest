@@ -1,0 +1,57 @@
+{
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.6", 
+      "provider": "wx5bc2ac602a747594"
+    }
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/photoShow/photoShow",
+    "pages/api/api",
+    "pages/show/show",
+    "pages/timer/timer",
+    "pages/myBlog/myBlog"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "测试",
+    "enablePullDownRefresh": true,    
+    "backgroundColor": "#383838",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#7A7E83",
+    "borderStyle": "black",
+    "selectedColor": "#006df0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_CWS_HL.png",
+        "selectedIconPath": "images/icon_CWS_HL.png"
+      },
+      {
+        "pagePath": "pages/photoShow/photoShow",
+        "text": "图片展示",
+        "iconPath": "images/icon_settings_HL.png",
+        "selectedIconPath": "images/icon_settings_HL.png"
+      },
+      {
+        "pagePath": "pages/api/api",
+        "text": "api调用测试",
+        "iconPath": "images/icon_settings_HL.png",
+        "selectedIconPath": "images/icon_settings_HL.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

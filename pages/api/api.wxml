@@ -1,0 +1,60 @@
+<view>
+  <navigator url="../timer/timer">腾讯地图插件</navigator>
+</view>
+
+<view>
+  <button bindtap='getApi'>get请求获取API数据</button>
+</view>
+<view>
+  <text>{{apiData}}</text>
+</view>
+<view>
+  <button bindtap='getpostApi'>post请求获取API数据</button>
+</view>
+<view>
+  <text>{{postData}}</text>
+</view>
+
+<view>
+  <button bindtouchstart="voiceStartRecord" bindtouchend="voiceEndRecord">按住录音</button>
+</view>
+<view>
+  <text>{{audioText}}</text>
+</view>
+
+<view>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获用户隐秘信息</button>
+</view>
+<view>
+  <button bindtap='successTips'>成功提示</button>
+  <button bindtap='loadingTips'>加载提示</button>
+</view>
+<view>
+  <button bindtap='getlocotion'>获取地理位置</button>
+</view>
+<button type="primary" size='40' session-from='bot|{{userInfo.nickName}}|{{userInfo.avatarUrl}}' open-type='contact'>联系客服</button>
+<view>
+    <navigator url="../show/show">跳转到新页面</navigator>
+</view>
+<view>
+<button bindtap='cameaCode'>扫码</button>
+  <input value='{{code}}'></input>
+</view>
+<view>
+  <button bindtap='camea'>相机拍照</button>
+  <button bindtap='camStart'>相机拍摄</button>
+  <button bindtap='camStop'>停止拍摄</button>
+  <camera
+  device-position="back"
+  flash="off"
+  binderror="error"
+  style="width: 100%; height: 300px;"
+></camera>
+</view>
+<view>照片预览</view>
+<view><image mode="widthFix" src="{{src}}"></image></view>
+<view>录像预览</view>
+<view>
+  <video src='{{videosrc}}'></video>
+</view>
+

@@ -1,0 +1,112 @@
+<swiper indicator-dots="true" indicator-color="pink" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imageUrls}}">
+    <swiper-item>
+      <image src='{{item}}' style='width:{{imagewidth}}px;height:{{imageheight}}px' bindload='imageLoad' ></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='page'>
+  <icon type='success' size='50'></icon>
+  <view>
+    <text>操作成功</text>
+  </view>
+</view>
+<view>
+  <block wx:for="{{iconType}}">
+    <icon type='{{item}}' size='40'></icon>
+  </block>
+</view>
+<view>
+  <progress percent='30' show-info='true' border-radius='20' active='true'></progress>
+</view>
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+  <view class="section__title">日期选择器</view>
+  <picker bindchange="bindPickerdateChange" mode='date' fields='day' value="{{date}}" start='2000-01-01' end='2050-12-30'>
+    <view class="picker">
+      当前选择：{{date}}
+    </view>
+  </picker>
+  <view class="section__title">时间选择器</view>
+  <picker bindchange="bindPickertimeChange" mode='time' value="{{time}}" start='08:00' end='24:00'>
+    <view class="picker">
+      当前选择：{{time}}
+    </view>
+  </picker>
+</view>
+<view>
+<view>slider滑块</view>
+  <slider ste='10' value='50' min='0' max='100' block-size='28' show-value='true' ></slider>
+</view>
+<view>
+  <switch type='switch' checked='true'></switch>
+  <switch type='checkbox' checked='true'></switch>
+  <textarea auto-focus='true' auto-height></textarea>
+</view>
+
+<view>
+  <audio src="{{musicUrl}}" name="起风了" poster='https://y.gtimg.cn/music/photo_new/T002R300x300M000003rX9DW3AI4Zm.jpg'
+  author="买辣椒也用券" loop='true' controls id='myAudio'></audio>
+  <button type="primary" bindtap="audioPlay">播放</button>
+  <button type="primary" bindtap="audioPause">暂停</button>
+  <button type="primary" bindtap="audioStart">回到开头</button>
+</view>
+
+<view class="section tc">
+  <video src="{{src}}" controls></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+  </view>
+</view>
+
+<view class="section tc">
+  <video
+    id="myVideo"
+    src="cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/my-image.mp4"
+    danmu-list="{{danmuList}}"
+    enable-danmu
+    danmu-btn
+    loop='true'
+    controls
+  ></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+    <input bindblur="bindInputBlur" placeholder='填写弹幕内容' />
+    <button bindtap="bindSendDanmu">发送弹幕</button>
+  </view>
+</view>
+<view>
+  <canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas"></canvas>
+
+</view>
+<view>
+<view>
+头像：<open-data type="userAvatarUrl"></open-data>
+</view>
+<view>
+  昵称：<open-data type="userNickName"></open-data>
+</view>
+<view>
+性别：<open-data type="userGender" lang="zh_CN"></open-data>
+</view>
+
+<view>
+国家：<open-data type="userCountry" lang="zh_CN"></open-data>
+</view>
+<view>
+省份：<open-data type="userProvince" lang="zh_CN"></open-data>
+</view>
+<view>
+城市：<open-data type="userCity" lang="zh_CN"></open-data>
+</view>
+<view>
+语言：<open-data type="userLanguage"></open-data>
+</view>
+
+</view>
+

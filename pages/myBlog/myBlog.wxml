@@ -1,0 +1,24 @@
+<view class='all'>
+  <cover-view class='head'>
+    <view>顶部菜单</view>
+  </cover-view>
+  <view class='body'>
+    <view class='banner'>
+      <view>公告</view>
+    </view>
+    <view class='top'>
+      <view>自我介绍</view>
+      <video></video>
+      <view>
+        <image></image>
+        <text>Hi!我是一名96年出生的程序员,拥有一腔热血</text>
+      </view>
+    </view>
+    <view class='main'>
+      <view>主体内容</view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view>结束连接信息</view>
+  </view>
+</view>
