@@ -48,6 +48,15 @@
   <switch type='checkbox' checked='true'></switch>
   <textarea auto-focus='true' auto-height></textarea>
 </view>
+<view>
+  <button bindtap="switchTab" >跳转到首页tabar</button>
+</view>
+<view>
+  <button bindtap="redirectTo" >关闭当前页跳转到除tabar的页面</button>
+</view>
+<view>
+  <button bindtap="navigateTo">不关闭当前页跳转到除tabar的页面</button>
+</view>
 
 <view>
   <audio src="{{musicUrl}}" name="起风了" poster='https://y.gtimg.cn/music/photo_new/T002R300x300M000003rX9DW3AI4Zm.jpg'

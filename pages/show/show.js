@@ -82,6 +82,22 @@ Page({
     })
   },
 
+  switchTab:function(e){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+  redirectTo:function(e){
+    wx.redirectTo({
+      url: '/pages/timer/timer',
+    })
+  },
+  navigateTo:function(e){
+    wx.navigateTo({
+      url: '/pages/timer/timer',
+    })
+  },
+
   /**音频 */
   audioPlay:function(){
     this.audioCtx.play();
