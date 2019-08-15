@@ -53,6 +53,14 @@ Page({
       duration: 2000
     })
   },
+  showLoading:function(e){
+    wx.showLoading({
+      title: '加载中',
+    });
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+  },
  
   loadingTips(){
     wx.showToast({
@@ -124,6 +132,53 @@ Page({
       }
     })
   },
+  showActionSheet:function(e){
+    wx.showActionSheet({
+      itemList: ["第一个菜单","第二个菜单"],
+    })
+  },
+  //导航条加载动画
+  navigationBarLoading:function(e){
+    wx.showNavigationBarLoading();
+    setTimeout(function () {
+      wx.hideNavigationBarLoading()
+    }, 2000)
+  },
+  //设置下拉样式
+  setBackgroundTextStyle:function(e){
+    wx.setBackgroundTextStyle({
+      textStyle: 'light' // 下拉背景字体、loading 图的样式为dark
+    })
+  },
+  //设置tabar红点
+  tabBarRedDot:function(e){
+    wx.showTabBarRedDot({
+      index: 0,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  setTabBarBadge:function(e){
+    wx.setTabBarBadge({
+      index: 1,
+      text: '1',
+    })
+  },
+  //滚动定位
+  pageScrollTo:function(e){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  },
+  //创建动画
+  navigateTo:function(e){
+    wx.navigateTo({
+      url: '/pages/animation/animation',
+    })
+  },
+
 
   voiceStartRecord: function () {
     if (this.recorderManager == null) {

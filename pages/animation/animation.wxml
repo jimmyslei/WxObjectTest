@@ -1,0 +1,13 @@
+<view class="body">
+  <view class="topShow">
+    <view class="animation" animation="{{animation}}">皮皮虾</view>
+  </view>
+  <view class="oper">
+  <button bindtap="rotate">旋转</button>
+  <button bindtap="scale">缩放</button>
+  <button bindtap="translate">平移</button>
+  <button bindtap="skew">倾斜</button>
+  <button bindtap="allOper">多操作</button>
+  <button bindtap="reset">还原</button>
+  </view>
+</view>

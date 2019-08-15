@@ -3,7 +3,7 @@
 </view>
 
 <view>
-  <button bindtap='getApi'>get请求获取API数据</button>
+  <button class="get" bindtap='getApi'>get请求获取API数据</button>
 </view>
 <view>
   <text>{{apiData}}</text>
@@ -28,6 +28,7 @@
 <view>
   <button bindtap='successTips'>成功提示</button>
   <button bindtap='loadingTips'>加载提示</button>
+  <button bindtap="showLoading">加载中</button>
 </view>
 <view>
   <button bindtap='getlocotion'>获取地理位置</button>
@@ -40,6 +41,28 @@
 <button bindtap='cameaCode'>扫码</button>
   <input value='{{code}}'></input>
 </view>
+<view>
+  <button bindtap="showActionSheet">唤醒菜单</button>
+</view>
+<view>
+  <button bindtap="navigationBarLoading">导航条加载动画</button>
+</view>
+<view>
+  <button bindtap="setBackgroundTextStyle">设置下拉刷新样式</button>
+</view>
+<view>
+  <button bindtap="tabBarRedDot">设置tabar红点</button>
+</view>
+<view>
+  <button bindtap="setTabBarBadge">tabar右上角添加文本</button>
+</view>
+<view>
+  <button bindtap="pageScrollTo">滚动定位</button>
+</view>
+<view>
+  <button bindtap="navigateTo" >动画页面</button>
+</view>
+
 <view>
   <button bindtap='camea'>相机拍照</button>
   <button bindtap='camStart'>相机拍摄</button>
@@ -57,4 +80,5 @@
 <view>
   <video src='{{videosrc}}'></video>
 </view>
+
 
