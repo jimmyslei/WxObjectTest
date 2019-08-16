@@ -6,7 +6,8 @@ Page({
     postData:'',
     src:"",
     code:'',
-    videosrc:''
+    videosrc:'',
+    imgfile:''
   },
  
   onLoad:function(options){
@@ -178,7 +179,40 @@ Page({
       url: '/pages/animation/animation',
     })
   },
-
+  //文件下载
+  download:function(){
+    var ths = this;
+    wx.downloadFile({
+      url:'https://6a69-jimmy-0c83ef-1254386761.tcb.qcloud.la/257A8299.png?sign=f215384921b04892165753c905187619&t=1565922728',
+     // filePath:'/images',
+      success:function(res){
+        if (res.statusCode === 200) {
+          ths.setData({ imgfile: res.tempFilePath});
+        }
+      }
+    })
+  },
+  //设置缓存
+  setStorage:function(){
+    wx.setStorage({
+      key: 'userName',
+      data: 'admin',
+    });
+    wx.showToast({
+      title: '缓存设置成功',
+    })
+  },
+  getStorage:function(){
+    wx.getStorage({
+      key: 'userName',
+      success: function(res) {
+        wx.showModal({
+          title: '缓存值',
+          content: res.data,
+        })
+      },
+    })
+  },
 
   voiceStartRecord: function () {
     if (this.recorderManager == null) {

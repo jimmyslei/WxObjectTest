@@ -62,6 +62,14 @@
 <view>
   <button bindtap="navigateTo" >动画页面</button>
 </view>
+<view>
+  <button bindtap="download">下载文件</button>
+  <image src='{{imgfile}}'></image>
+</view>
+<view>
+  <button bindtap="setStorage">设置缓存值</button>
+  <button bindtap="getStorage">获取缓存值</button>
+</view>
 
 <view>
   <button bindtap='camea'>相机拍照</button>
