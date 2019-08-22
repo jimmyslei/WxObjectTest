@@ -62,6 +62,12 @@ Page({
       wx.hideLoading()
     }, 2000)
   },
+  //跳转到地图
+  navigateToMap:function(e){
+    wx.navigateTo({
+      url: '/pages/map/map',
+    })
+  },
  
   loadingTips(){
     wx.showToast({

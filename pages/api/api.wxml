@@ -1,7 +1,9 @@
 <view>
   <navigator url="../timer/timer">腾讯地图插件</navigator>
 </view>
-
+<view>
+  <button bindtap="navigateToMap">地图</button>
+</view>
 <view>
   <button class="get" bindtap='getApi'>get请求获取API数据</button>
 </view>
