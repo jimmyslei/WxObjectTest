@@ -25,3 +25,8 @@ button{
   overflow: hidden;
   margin: 1em;
 }
+
+.imgs{
+  justify-content: center;
+  margin: 0 auto;
+}

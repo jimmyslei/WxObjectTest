@@ -10,7 +10,6 @@ Component({
   }
 })
  */
-
 function getRandomColor() {
   const rgb = []
   for (let i = 0; i < 3; ++i) {
@@ -33,7 +32,8 @@ Page({
       "cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/257A8458.png",
       "cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/257A8425.png"
     ],
-    musicUrl:"",
+    imglist:[],
+    musicUrl:'',
     imagewidth:0,
     imageheight:0,
     autoplay:true,
@@ -99,16 +99,27 @@ Page({
   },
 
   /**音频 */
+  audioIde:function(){
+    wx.navigateTo({
+      url: '/pages/audio/audio',
+    })
+  },
+  //作废
+/*
   audioPlay:function(){
+    this.audioCtx = wx.createAudioContext('myAudio');
     this.audioCtx.play();
   },
   audioPause:function(){
+    this.audioCtx = wx.createAudioContext('myAudio');
     this.audioCtx.pause();
   },
   audioStart:function(){
+    this.audioCtx = wx.createAudioContext('myAudio');
     this.audioCtx.seek(0);
   },
-  
+  */
+
   /**视频 */
   bindInputBlur(e) {
     this.inputValue = e.detail.value
@@ -132,12 +143,58 @@ Page({
       color: getRandomColor()
     })
   },
+  //图片选中
+  chooseImg:function(){
+    const that = this
+    wx.chooseImage({
+      success: function(res) {
+        that.setData({
+          imglist: res.tempFilePaths
+        })
+      },
+    })
+  },
+  showimg:function(event){
+    const that = this;
+    //图片预览
+    wx.previewImage({
+      current: event.currentTarget.dataset.src,
+      urls: that.data.imglist,
+      success:function(e){
+        //获取图片信息
+        wx.getImageInfo({
+          src: event.currentTarget.dataset.src,
+          success:function(res){
+            wx.showModal({
+              title: '照片信息',
+              content: '宽：' + res.width + ",高：" + res.height + ",格式：" + res.type + ",图片路径：" + res.path,
+              success:function(){
+                wx.showModal({
+                  title: '保存提示',
+                  content: '确定保存到相册吗？',
+                  success: function (res) {
+                    if (res.confirm) {
+                      //保存图片到相册
+                      wx.saveImageToPhotosAlbum({
+                        filePath: event.currentTarget.dataset.src,
+                      })
+                    }
+                  }
+                });
+              }
+            })
+          }
+        });
+      }
+    })
+    
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.videoContext.requestFullScreen();
+    
   },
 
   imageLoad: function(e) {
@@ -152,24 +209,33 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function(e) {
-    this.audioCtx = wx.createAudioContext('myAudio');
-    this.audioCtx.play();
+    //audio停止维护
+   // this.audioCtx = wx.createAudioContext('myAudio');
+  //  this.audioCtx.play();
+
     this.videoContext = wx.createVideoContext('myVideo');
-    
+    this.videoContext.requestFullScreen();
+    //云开发
+    wx.cloud.init();
     wx.cloud.getTempFileURL({
-      fileList: ['cloud://jimmy-0c83ef.6a69-jimmy-0c83ef/起风了.mp3'],
+      fileList: ['cloud://jimmy-0c83ef.6a69-jimmy-0c83ef-1254386761/起风了.mp3'],
       success: res => {
         this.setData({
-          musicUrl: res.fileList
+          musicUrl: res.fileList[0].fileID
         })
-       
-        // get temp file URL
-        console.log(res.fileList)
       },
       fail: err => {
         // handle error
       }
     })
+
+    //音乐
+    const innerAudioContext = wx.createInnerAudioContext();
+    innerAudioContext.src = "cloud://jimmy-0c83ef.6a69-jimmy-0c83ef-1254386761/起风了.mp3";
+    innerAudioContext.autoplay = false;
+    innerAudioContext.loop = true;
+    //innerAudioContext.play();
+    innerAudioContext.volume=0.3;
 
     // 使用 wx.createContext 获取绘图上下文 context
     const context = wx.createCanvasContext('firstCanvas')

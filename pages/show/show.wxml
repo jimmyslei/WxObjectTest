@@ -59,11 +59,14 @@
 </view>
 
 <view>
-  <audio src="{{musicUrl}}" name="起风了" poster='https://y.gtimg.cn/music/photo_new/T002R300x300M000003rX9DW3AI4Zm.jpg'
-  author="买辣椒也用券" loop='true' controls id='myAudio'></audio>
+<!-- 作废
+    <audio id='myAudio' src="{{musicUrl}}" name="起风了" poster='https://y.gtimg.cn/music/photo_new/T002R300x300M000003rX9DW3AI4Zm.jpg'
+    author="买辣椒也用券" loop='true' controls></audio>
   <button type="primary" bindtap="audioPlay">播放</button>
   <button type="primary" bindtap="audioPause">暂停</button>
   <button type="primary" bindtap="audioStart">回到开头</button>
+-->
+  <button type="primary" bindtap="audioIde">音乐播放器</button>
 </view>
 
 <view class="section tc">
@@ -88,6 +91,14 @@
     <input bindblur="bindInputBlur" placeholder='填写弹幕内容' />
     <button bindtap="bindSendDanmu">发送弹幕</button>
   </view>
+
+  <view>
+    <button bindtap="chooseImg">获取图片</button>
+    <view style="text-align: center" wx:for="{{imglist}}" wx:item="*this">
+      <image class="imgs" src="{{item}}" data-src="{{item}}" bindtap="showimg"></image>
+    </view>
+  </view>
+
 </view>
 <view>
   <canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas"></canvas>
