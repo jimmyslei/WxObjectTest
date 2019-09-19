@@ -150,6 +150,47 @@ Page({
       success: function(res) {
         that.setData({
           imglist: res.tempFilePaths
+        });
+        debugger
+        wx.cloud.uploadFile({
+          cloudPath: 'example.png',
+          filePath: res.tempFilePaths[0], // 文件路径
+          success: res => {
+            // get resource ID
+            debugger
+            console.log(res.fileID)
+            wx.cloud.getTempFileURL({
+              fileList: [res.fileID],
+              success: res => {
+                // get temp file URL
+                debugger
+                console.log(res.fileList)
+
+                wx.request({
+                  url: 'http://127.0.0.1:5001/api/AI/genUrl',
+                  method: 'POST',
+                  data: { url: res.fileList[0].tempFileURL },
+                  header: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                  },
+                  success: function (result) {
+                    debugger
+                  },
+                  fail: function (error) {
+
+                  }
+                })
+
+              },
+              fail: err => {
+                // handle error
+              }
+            })
+          },
+          fail: err => {
+            // handle error
+          }
         })
       },
     })

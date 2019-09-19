@@ -44,5 +44,4 @@ App({
       article_id: '',
     }
   },
-  "requiredBackgroundModes": ["audio", "location"]
 })

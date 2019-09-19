@@ -7,6 +7,12 @@ const APP = getApp()
 const AUDIOMANAGER = getApp().globalData.global_bac_audio_manager.manage
 const AUDIO = getApp().globalData.global_bac_audio_manager
 Page({
+  data:{
+    audio_article:{
+      preArticleId:1,
+      nextArticleId:2
+    }
+  },
   onLoad: function (e) {
     let that = this;
 
@@ -19,7 +25,6 @@ Page({
     })
 
    // let response = res.data.data.information
-  debugger
     let response = { preArticleId: 0, nextArticleId: 0, articleName: '起风了', lessonName: '起风了', poster: 'https://y.gtimg.cn/music/photo_new/T002R300x300M000003rX9DW3AI4Zm.jpg', urlCompressed:'cloud://jimmy-0c83ef.6a69-jimmy-0c83ef-1254386761/起风了.mp3'};
     // 如果不是从悬浮按钮播放，就重新赋值
     if (e.articleId == AUDIO.id && AUDIO.is_play) {
@@ -168,7 +173,7 @@ Page({
   // 下一首
   next: function () {
     let that = this
-
+debugger
     if (that.data.audio_article.nextArticleId != 0) {
       wx.redirectTo({
         url: '/pages/audio/audio?articleId=' +
