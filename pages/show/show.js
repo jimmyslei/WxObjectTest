@@ -151,14 +151,11 @@ Page({
         that.setData({
           imglist: res.tempFilePaths
         });
-        debugger
         wx.cloud.uploadFile({
           cloudPath: 'example.png',
           filePath: res.tempFilePaths[0], // 文件路径
           success: res => {
             // get resource ID
-            debugger
-            console.log(res.fileID)
             wx.cloud.getTempFileURL({
               fileList: [res.fileID],
               success: res => {
