@@ -97,6 +97,9 @@
     <view style="text-align: center" wx:for="{{imglist}}" wx:item="*this">
       <image class="imgs" src="{{item}}" data-src="{{item}}" bindtap="showimg"></image>
     </view>
+    <view>
+    <text>{{imgText}}</text>
+    </view>
   </view>
 
 </view>

@@ -53,6 +53,8 @@ Page({
     date:'2019-05-01',
     time:'14:00',
     src:'',
+    //识别出来的文字
+    imgText:'',
     danmuList: [
       {
         text: '第 1s 出现的弹幕',
@@ -148,6 +150,7 @@ Page({
     const that = this
     wx.chooseImage({
       success: function(res) {
+        
         that.setData({
           imglist: res.tempFilePaths
         });
@@ -160,22 +163,28 @@ Page({
               fileList: [res.fileID],
               success: res => {
                 // get temp file URL
-                debugger
+                
                 console.log(res.fileList)
-
+                var imgurl = res.fileList[0].tempFileURL;
                 wx.request({
-                  url: 'http://127.0.0.1:5001/api/AI/genUrl',
+                  url: 'https://127.0.0.1:5001/api/AI/genUrl?imgurl=' + imgurl,
                   method: 'POST',
-                  data: { url: res.fileList[0].tempFileURL },
+                  responseType:'text',
+                  data: {imgurl:imgurl},
                   header: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'application/json'
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json"
                   },
                   success: function (result) {
-                    debugger
+                    
+                    var text='';
+                    for (var i = 0; i < result.data.words_result.length;i++){
+                      text += result.data.words_result[i].words;
+                    }
+                    that.setData({ imgText: text});
                   },
                   fail: function (error) {
-
+                    debugger
                   }
                 })
 
