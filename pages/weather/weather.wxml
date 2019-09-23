@@ -1,0 +1,8 @@
+<view class="body">
+  <view class="weather"> 
+    <text>{{weatherData}}</text> 
+  </view>
+  <view class="apiWer">
+    <text>下</text>
+  </view>
+</view>

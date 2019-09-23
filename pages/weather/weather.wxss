@@ -1,0 +1,22 @@
+.body{
+  width: 100%;
+  height: 100%;
+}
+.weather{
+  font-family: "微软雅黑";
+  font-size: 38rpx;
+  color: white;
+  padding: 5rpx;
+  width: 100%;
+  height: 50%;
+  background-color: #1ca81c;
+}
+.apiWer{
+  font-family: "微软雅黑";
+  font-size: 38rpx;
+  color: white;
+  padding: 5rpx;
+  width: 100%;
+  height: 50%;
+  background-color: #1ca81c;
+}
