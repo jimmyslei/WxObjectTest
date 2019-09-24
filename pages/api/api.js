@@ -189,7 +189,7 @@ Page({
   download:function(){
     var ths = this;
     wx.downloadFile({
-      url:'https://6a69-jimmy-0c83ef-1254386761.tcb.qcloud.la/257A8299.png?sign=f215384921b04892165753c905187619&t=1565922728',
+      url:'https://6a69-jimmy-0c83ef-1254386761.tcb.qcloud.la/1.jpg?sign=42708a7d38e63268e8c92c9377b95639&t=1569312291',
      // filePath:'/images',
       success:function(res){
         if (res.statusCode === 200) {

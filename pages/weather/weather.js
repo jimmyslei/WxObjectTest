@@ -1,12 +1,14 @@
 // 引用百度地图微信小程序JSAPI模块 
 var bmap = require('../../utils/bmap-wx.js');
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    weatherData: ''
+    weatherData: '',
+    wxParseData:''
   },
 
   /**
@@ -35,9 +37,9 @@ Page({
       success: success
     });
 
-/*
+    var city="重庆";
     wx.request({
-      url: 'https://127.0.0.1:5001/api/AI/getWerther',
+      url: 'https://127.0.0.1:5001/api/AI/getWerther?city='+city,
       method: 'POST',
       responseType: 'text',
       data: { city: '重庆' },
@@ -46,18 +48,15 @@ Page({
         "Accept": "application/json"
       },
       success: function (result) {
-
-        var text = '';
-        for (var i = 0; i < result.data.words_result.length; i++) {
-          text += result.data.words_result[i].words;
-        }
-        that.setData({ imgText: text });
+        var text = '温馨提示：'+ result.data.result.summary+'\n'
+          + '标题：' + result.data.result.title + '\n 今日天气：' + result.data.result.texts[0];
+        
+        that.setData({ wxParseData: WxParse.wxParse('databinding', 'html', text, that, 5) });
       },
       fail: function (error) {
-        
       }
-    })
-    */
+    });
+    
   },
 
   /**

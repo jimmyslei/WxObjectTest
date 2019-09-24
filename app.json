@@ -12,7 +12,8 @@
     "pages/api/api",
     "pages/show/show",
     "pages/timer/timer",
-    "pages/myBlog/myBlog"
+    "pages/myBlog/myBlog",
+    "pages/out/out"
   ],
   "window": {
     "backgroundTextStyle": "light",

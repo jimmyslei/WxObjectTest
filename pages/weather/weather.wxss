@@ -12,11 +12,13 @@
   background-color: #1ca81c;
 }
 .apiWer{
+  border-radius: 15rpx;
+  margin: 5rpx;
   font-family: "微软雅黑";
   font-size: 38rpx;
   color: white;
-  padding: 5rpx;
-  width: 100%;
+  padding: 15rpx;
+  width: 95%;
   height: 50%;
   background-color: #1ca81c;
 }

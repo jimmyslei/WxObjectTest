@@ -1,8 +1,12 @@
+<import src="../../wxParse/wxParse.wxml"/>
+
 <view class="body">
   <view class="weather"> 
     <text>{{weatherData}}</text> 
   </view>
   <view class="apiWer">
-    <text>下</text>
+    <view class="view1-text">
+      <template is="wxParse" data="{{wxParseData:databinding.nodes}}"/>
+    </view>
   </view>
 </view>
