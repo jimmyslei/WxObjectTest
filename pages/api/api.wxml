@@ -8,6 +8,9 @@
   <navigator url="../weather/weather">天气</navigator>
 </view>
 <view>
+  <navigator url="../cloudApi/cloudApi">服务端开发</navigator>
+</view>
+<view>
   <navigator url="../out/out">外部天气插件</navigator>
 </view>
 <view>
